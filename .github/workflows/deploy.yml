@@ -1,4 +1,4 @@
-name: CI/CD Pipeline - Casa de Cambios
+name: CI/CD Pipeline - Casa de Cambio
 
 on:
   push:
