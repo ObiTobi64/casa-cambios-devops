@@ -22,27 +22,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Node.js for Backend
-        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          submodules: 'recursive'
 
-      - name: Install Backend Dependencies
+      - name: Clone Frontend Repository
         run: |
-          cd proyecto2-back
-          npm ci
+          git clone https://github.com/certi-devops-team/proyecto2-front.git
+
+      - name: Clone Backend Repository
+        run: |
+          git clone https://github.com/certi-devops-team/proyecto2-back.git
 
       - name: Build Backend Docker Image
         run: |
           cd proyecto2-back
           docker build -t casa-cambios-backend:${{ github.sha }} .
           docker tag casa-cambios-backend:${{ github.sha }} casa-cambios-backend:latest
-
-      - name: Install Frontend Dependencies
-        run: |
-          cd proyecto2-front
-          npm ci
 
       - name: Build Frontend Docker Image
         run: |
