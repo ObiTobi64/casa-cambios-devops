@@ -1,0 +1,61 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'casa-cambios-monitor'
+
+# Configuración de Alertmanager (opcional)
+# alerting:
+#   alertmanagers:
+#     - static_configs:
+#         - targets: ['alertmanager:9093']
+
+# Reglas de alertas (opcional)
+# rule_files:
+#   - "alerts.yml"
+
+scrape_configs:
+  # Métricas de Prometheus mismo
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          service: 'prometheus'
+
+  # Métricas del sistema EC2 (CPU, RAM, Disco, Red)
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+        labels:
+          service: 'ec2-instance'
+          instance: 'devops-casa-cambios'
+
+  # Métricas de contenedores Docker
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+        labels:
+          service: 'docker-containers'
+
+  # Métricas del Backend (si implementas /metrics endpoint)
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend:3000']
+        labels:
+          service: 'backend-api'
+    metrics_path: '/metrics'
+    # Si no tienes endpoint /metrics, comenta este job
+
+  # Métricas de Grafana
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['grafana:3000']
+        labels:
+          service: 'grafana'
+
+  # Métricas de Loki
+  - job_name: 'loki'
+    static_configs:
+      - targets: ['loki:3100']
+        labels:
+          service: 'loki'

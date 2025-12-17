@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+*.tar.gz
+
+# Terraform
+terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+.terraform/
+.terraform.lock.hcl
+
+# SSH Keys
+*.pem
+*.key
+*.ppk
+
+# Monitoring data (local)
+prometheus_data/
+grafana_data/
+loki_data/
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*.backup
+*.sql
+backup/
