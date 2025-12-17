@@ -24,9 +24,7 @@ services:
 
   # Backend API
   backend:
-    build:
-      context: ./proyecto2-back
-      dockerfile: Dockerfile
+    image: casa-cambios-backend:latest
     container_name: casa-cambios-backend
     restart: unless-stopped
     ports:
@@ -55,11 +53,7 @@ services:
 
   # Frontend React
   frontend:
-    build:
-      context: ./proyecto2-front
-      dockerfile: Dockerfile
-      args:
-        VITE_API_URL: http://13.56.79.41:3000
+    image: casa-cambios-frontend:latest
     container_name: casa-cambios-frontend
     restart: unless-stopped
     ports:
