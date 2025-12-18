@@ -462,13 +462,3 @@ docker-compose restart grafana
 
 ---
 
-## 🎯 Siguiente Paso
-
-Una vez que todo esté funcionando:
-
-1. Documenta el proceso
-2. Toma todas las capturas requeridas
-3. Prepara el informe técnico
-4. Crea el diagrama de arquitectura
-
-**¡Felicidades! Tu stack DevOps completo está funcionando! 🎉**
