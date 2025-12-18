@@ -14,7 +14,6 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
-# VPC por defecto (puedes crear una VPC personalizada si prefieres)
 data "aws_vpc" "default" {
   default = true
 }
@@ -43,7 +42,7 @@ resource "aws_security_group" "casa_cambios_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # HTTPS (opcional)
+  # HTTPS 
   ingress {
     description = "HTTPS"
     from_port   = 443
@@ -96,15 +95,6 @@ resource "aws_security_group" "casa_cambios_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  # PostgreSQL (solo si quieres acceso externo - NO RECOMENDADO en producción)
-  # ingress {
-  #   description = "PostgreSQL"
-  #   from_port   = 5432
-  #   to_port     = 5432
-  #   protocol    = "tcp"
-  #   cidr_blocks = var.allowed_ssh_cidr
-  # }
 
   # Egress - Permitir todo el tráfico saliente
   egress {

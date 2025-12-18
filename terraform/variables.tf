@@ -13,7 +13,7 @@ variable "project_name" {
 variable "instance_type" {
   description = "Tipo de instancia EC2"
   type        = string
-  default     = "t3.small" # t3.small para evitar problemas de memoria con Grafana/Prometheus
+  default     = "t3.small" 
 }
 
 variable "key_name" {
@@ -25,7 +25,7 @@ variable "key_name" {
 variable "allowed_ssh_cidr" {
   description = "CIDR permitido para SSH (tu IP pública)"
   type        = list(string)
-  default     = ["0.0.0.0/0"] # CAMBIAR por tu IP específica para mayor seguridad
+  default     = ["0.0.0.0/0"] 
 }
 
 variable "environment" {
