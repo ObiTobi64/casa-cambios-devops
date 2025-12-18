@@ -500,9 +500,9 @@ docker-compose restart
 
 - **Nombre del equipo:** [TU EQUIPO]
 - **Integrantes:**
-  - [Nombre 1]
-  - [Nombre 2]
-  - [Nombre 3]
+  - Ivan Poma
+  - Andres Sanchez
+  - Wendy Caceres
 
 ---
 
