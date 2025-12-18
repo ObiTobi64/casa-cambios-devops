@@ -28,7 +28,7 @@ Thumbs.db
 *.tar.gz
 
 # Terraform
-terraform/
+
 *.tfstate
 *.tfstate.*
 *.tfvars

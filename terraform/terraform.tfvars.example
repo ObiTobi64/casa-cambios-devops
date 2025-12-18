@@ -1,0 +1,16 @@
+# AWS Region
+aws_region = "us-west-1"
+
+# Project Configuration
+project_name = "devops-casa-cambios"
+environment  = "production"
+
+# EC2 Configuration
+instance_type = "t3.small"
+key_name      = "devops-casa-cambios"
+volume_size   = 20
+
+# Security
+# IMPORTANTE: Cambiar por tu IP específica para mayor seguridad
+# allowed_ssh_cidr = ["TU_IP_PUBLICA/32"]
+allowed_ssh_cidr = ["0.0.0.0/0"]
