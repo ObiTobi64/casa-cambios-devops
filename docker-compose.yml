@@ -24,7 +24,7 @@ services:
 
   # Backend API
   backend:
-    image: casa-cambios-backend:latest
+    image: ${BACKEND_IMAGE:-casa-cambios-backend:latest}
     container_name: casa-cambios-backend
     restart: unless-stopped
     ports:
@@ -54,7 +54,7 @@ services:
 
   # Frontend React
   frontend:
-    image: casa-cambios-frontend:latest
+    image: ${FRONTEND_IMAGE:-casa-cambios-frontend:latest}
     container_name: casa-cambios-frontend
     restart: unless-stopped
     ports:
