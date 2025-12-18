@@ -158,7 +158,7 @@ jobs:
                      },
                      {
                        "name": "URLs",
-                       "value": "**App:** http://'"${{ env.EC2_HOST }}"'\n**Grafana:** http://'"${{ env.EC2_HOST }}"':3001\n**Prometheus:** http://'"${{ env.EC2_HOST }}"':9090",
+                       "value": "**App:** http://'"${{ secrets.EC2_HOST }}"'\n**Grafana:** http://'"${{ secrets.EC2_HOST }}"':3001\n**Prometheus:** http://'"${{ secrets.EC2_HOST }}"':9090",
                        "inline": false
                      }
                    ],
