@@ -121,6 +121,7 @@ jobs:
 
       - name: Copy files to EC2
         run: |
+          ssh -i ~/.ssh/id_rsa ${{ env.EC2_USER }}@${{ env.EC2_HOST }} "mkdir -p ~/casa-cambios-devops"
           scp -i ~/.ssh/id_rsa docker-compose.yml ${{ env.EC2_USER }}@${{ env.EC2_HOST }}:~/casa-cambios-devops/
           scp -i ~/.ssh/id_rsa -r monitoring ${{ env.EC2_USER }}@${{ env.EC2_HOST }}:~/casa-cambios-devops/
 
