@@ -37,5 +37,5 @@ variable "environment" {
 variable "volume_size" {
   description = "Tamaño del volumen EBS en GB"
   type        = number
-  default     = 20
+  default     = 30
 }
